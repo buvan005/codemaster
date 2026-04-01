@@ -1,0 +1,455 @@
+/* ═══════════════════════════════════════════════════════════
+   ProblemList Sidebar — Modern Minimalist Theme
+   ═══════════════════════════════════════════════════════════ */
+
+.problem-list-sidebar {
+  width: 300px;
+  min-width: 260px;
+  max-width: 340px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+
+.problem-list-header {
+  padding: var(--sp-6) var(--sp-4) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.problem-list-header h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.problem-list-header h2::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--text-body);
+}
+
+.problem-list-count {
+  margin-top: var(--sp-2);
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.2px;
+}
+
+/* ── Search Bar ─────────────────────────────────────────── */
+
+.problem-list-search {
+  padding: var(--sp-3) var(--sp-4);
+  flex-shrink: 0;
+}
+
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-dim);
+  display: flex;
+  pointer-events: none;
+  transition: color var(--transition);
+}
+
+.search-input-wrap:focus-within .search-icon {
+  color: var(--text-body);
+}
+
+.problem-list-search input {
+  width: 100%;
+  padding: 10px 32px 10px 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-size: 13px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.problem-list-search input::placeholder {
+  color: var(--text-dim);
+}
+
+.problem-list-search input:focus {
+  border-color: var(--border-strong);
+  background: rgba(43, 58, 66, 0.8);
+}
+
+.search-clear {
+  position: absolute;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  transition: background var(--transition);
+  padding: 0;
+}
+
+.search-clear:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-main);
+}
+
+/* ── Filter Section ─────────────────────────────────────── */
+
+.filter-section {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.filter-row {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 6px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-body);
+}
+
+.filter-btn.active {
+  color: var(--text-main);
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+}
+
+.filter-btn.easy.active {
+  color: var(--pass);
+  background: var(--pass-bg);
+  border-color: var(--pass-border);
+}
+
+.filter-btn.medium.active {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+.filter-btn.hard.active {
+  color: var(--fail);
+  background: var(--fail-bg);
+  border-color: var(--fail-border);
+}
+
+/* ── Tag Chips ──────────────────────────────────────────── */
+
+.tag-filter-wrap {
+  margin-top: var(--sp-2);
+}
+
+.tag-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-chip {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.tag-chip:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-body);
+}
+
+.tag-chip.active {
+  color: var(--text-main);
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+}
+
+/* ── Clear Filters ──────────────────────────────────────── */
+
+.clear-filters-btn {
+  display: block;
+  width: 100%;
+  margin-top: var(--sp-2);
+  padding: 5px 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.clear-filters-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+}
+
+/* ── Scrollable List ────────────────────────────────────── */
+
+.problem-list-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-2) var(--sp-3);
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(211, 211, 211, 0.1) transparent;
+}
+
+/* ── Empty State ────────────────────────────────────────── */
+
+.problem-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-10) var(--sp-5);
+  color: var(--text-dim);
+  font-size: 13px;
+  text-align: center;
+  gap: var(--sp-2);
+}
+
+.problem-list-empty-icon {
+  font-size: 24px;
+  opacity: 0.3;
+  margin-bottom: var(--sp-1);
+}
+
+.empty-reset-btn {
+  margin-top: var(--sp-2);
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.empty-reset-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+}
+
+/* ── Problem Card ───────────────────────────────────────── */
+
+.problem-card {
+  padding: var(--sp-4) var(--sp-3) var(--sp-3);
+  margin-bottom: var(--sp-1);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  background: transparent;
+}
+
+.problem-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 2px;
+  height: 50%;
+  border-radius: 0 2px 2px 0;
+  background: var(--text-body);
+  transition: transform var(--transition);
+}
+
+.problem-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border);
+}
+
+.problem-card:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.problem-card.selected {
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+}
+
+.problem-card.selected::before {
+  transform: translateY(-50%) scaleY(1);
+  background: var(--text-main);
+}
+
+/* ── Card Header ────────────────────────────────────────── */
+
+.problem-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-2);
+}
+
+.problem-card-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+}
+
+/* ── Problem Title ──────────────────────────────────────── */
+
+.problem-card-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-body);
+  margin-bottom: var(--sp-3);
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+.problem-card:hover .problem-card-title {
+  color: var(--text-main);
+}
+
+.problem-card.selected .problem-card-title {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* ── Difficulty Badge ───────────────────────────────────── */
+
+.difficulty-badge {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.difficulty-badge.easy {
+  color: var(--pass);
+  background: var(--pass-bg);
+  border: 1px solid var(--pass-border);
+}
+
+.difficulty-badge.medium {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.difficulty-badge.hard {
+  color: var(--fail);
+  background: var(--fail-bg);
+  border: 1px solid var(--fail-border);
+}
+
+/* ── Tags ───────────────────────────────────────────────── */
+
+.problem-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.problem-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  letter-spacing: 0.2px;
+  transition: all var(--transition);
+}
+
+.problem-tag.highlighted {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+
+.problem-card:hover .problem-tag {
+  color: var(--text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .problem-list-sidebar {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .filter-row {
+    flex-wrap: wrap;
+  }
+}

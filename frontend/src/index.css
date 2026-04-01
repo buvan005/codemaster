@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════════════════
+   CodeMasters Pro — "Modern Minimalist" Global Theme
+   A clean, distraction-free design system for focused coding.
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Modern Minimalist Palette ────────────────────────── */
+  --bg-main:       #36454f;
+  --bg-panel:      #2f3e46;
+  --bg-card:       #3a4a54;
+  --bg-input:      #2b3a42;
+  --bg-elevated:   #3f5058;
+  --bg-sidebar:    #2a363d;
+
+  --primary:       #708090;   /* Slate Gray */
+  --primary-hover: #5f7080;
+  --accent:        #ffffff;
+
+  --text-main:     #ffffff;
+  --text-body:     #d3d3d3;
+  --text-muted:    #a0aab0;
+  --text-dim:      #708090;
+
+  --border:        rgba(211, 211, 211, 0.15);
+  --border-strong: rgba(211, 211, 211, 0.3);
+  --border-light:  rgba(255, 255, 255, 0.08);
+
+  --shadow:        0 2px 12px rgba(0, 0, 0, 0.2);
+  --shadow-sm:     0 1px 4px rgba(0, 0, 0, 0.15);
+
+  /* Pass / Fail */
+  --pass:          #4ade80;
+  --pass-bg:       rgba(74, 222, 128, 0.08);
+  --pass-border:   rgba(74, 222, 128, 0.2);
+  --fail:          #f87171;
+  --fail-bg:       rgba(248, 113, 113, 0.08);
+  --fail-border:   rgba(248, 113, 113, 0.2);
+
+  /* Typography — Inter as web-safe DejaVu Sans equivalent */
+  --font-heading:  'Inter', 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+  --font-body:     'Inter', 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:     ui-monospace, SFMono-Regular, 'Cascadia Code', Consolas, monospace;
+
+  /* 8px grid spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  --radius: 6px;
+  --radius-sm: 4px;
+  --radius-pill: 16px;
+
+  --transition: 150ms ease;
+
+  font: 14px/1.5 var(--font-body);
+  color: var(--text-body);
+  background: var(--bg-main);
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+h1 { font-size: 24px; margin: var(--sp-6) 0 var(--sp-4); }
+h2 { font-size: 18px; line-height: 1.5; margin: 0 0 var(--sp-3); }
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--text-main);
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+
+::selection {
+  background: rgba(112, 128, 144, 0.35);
+  color: var(--text-main);
+}
+
+/* ── Focus visible ──────────────────────────────────────── */
+
+:focus-visible {
+  outline: 1.5px solid var(--text-body);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 211, 211, 0.12);
+  border-radius: 10px;
+  transition: background 150ms ease;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(211, 211, 211, 0.28); }
+
+/* ── Reduced motion ─────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
